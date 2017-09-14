@@ -1,8 +1,7 @@
-'use strict';
-var http = require('http');
-var port = process.env.PORT || 1337;
+var console = require("console");
+//var setTimeout = require("setTimeout");
+var opcua = require("node-opcua");
+var async = require("async");
 
-http.createServer(function (req, res) {
-    res.writeHead(200, { 'Content-Type': 'text/plain' });
-    res.end('Hello World\n');
-}).listen(port);
+var client = new opcua.OPCUAClient();
+var endpointUrl = "opc.tcp://127.0.0.1:8087";
